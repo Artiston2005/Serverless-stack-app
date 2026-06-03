@@ -57,9 +57,7 @@ export default function ProjectsClient({ projects }: { projects: Project[] }) {
       <div className="flex justify-between items-center bg-card text-card-foreground border shadow-sm rounded-xl p-6">
         <h1 className="text-2xl font-bold">Projects</h1>
         <Dialog open={open} onOpenChange={setOpen}>
-          <DialogTrigger asChild>
-            <Button><Plus className="mr-2 h-4 w-4" /> New Project</Button>
-          </DialogTrigger>
+          <DialogTrigger render={<Button><Plus className="mr-2 h-4 w-4" /> New Project</Button>} />
           <DialogContent>
             <DialogHeader>
               <DialogTitle>Create Project</DialogTitle>
@@ -116,11 +114,7 @@ export default function ProjectsClient({ projects }: { projects: Project[] }) {
                   <TableCell>{new Date(project.created_at).toLocaleDateString()}</TableCell>
                   <TableCell>
                     <DropdownMenu>
-                      <DropdownMenuTrigger asChild>
-                        <Button variant="ghost" className="h-8 w-8 p-0">
-                          <MoreHorizontal className="h-4 w-4" />
-                        </Button>
-                      </DropdownMenuTrigger>
+                      <DropdownMenuTrigger render={<Button variant="ghost" className="h-8 w-8 p-0"><MoreHorizontal className="h-4 w-4" /></Button>} />
                       <DropdownMenuContent align="end">
                         <DropdownMenuItem className="text-destructive" onClick={() => handleDelete(project.id)}>
                           Delete

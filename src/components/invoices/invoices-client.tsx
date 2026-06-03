@@ -73,9 +73,7 @@ export default function InvoicesClient({ invoices, projects }: { invoices: Invoi
       <div className="flex justify-between items-center bg-card text-card-foreground border shadow-sm rounded-xl p-6">
         <h1 className="text-2xl font-bold">Invoices</h1>
         <Dialog open={open} onOpenChange={setOpen}>
-          <DialogTrigger asChild>
-            <Button><Plus className="mr-2 h-4 w-4" /> New Invoice</Button>
-          </DialogTrigger>
+          <DialogTrigger render={<Button><Plus className="mr-2 h-4 w-4" /> New Invoice</Button>} />
           <DialogContent>
             <DialogHeader>
               <DialogTitle>Create Invoice</DialogTitle>
@@ -83,14 +81,16 @@ export default function InvoicesClient({ invoices, projects }: { invoices: Invoi
             <div className="space-y-4 pt-4">
               <div className="space-y-2">
                 <Label>Project</Label>
-                <Select value={projectId} onValueChange={setProjectId}>
-                  <SelectTrigger><SelectValue placeholder="Select a project" /></SelectTrigger>
-                  <SelectContent>
-                    {projects.map((p) => (
-                        <SelectItem key={p.id} value={p.id}>{p.title}</SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                <select 
+                  value={projectId} 
+                  onChange={(e) => setProjectId(e.target.value)}
+                  className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                >
+                  <option value="" disabled>Select a project...</option>
+                  {projects.map((p) => (
+                    <option key={p.id} value={p.id}>{p.title}</option>
+                  ))}
+                </select>
               </div>
               <div className="space-y-2">
                 <Label>Amount (₹)</Label>
@@ -145,11 +145,7 @@ export default function InvoicesClient({ invoices, projects }: { invoices: Invoi
                   <TableCell>{new Date(invoice.due_date).toLocaleDateString()}</TableCell>
                   <TableCell>
                     <DropdownMenu>
-                      <DropdownMenuTrigger asChild>
-                        <Button variant="ghost" className="h-8 w-8 p-0">
-                          <MoreHorizontal className="h-4 w-4" />
-                        </Button>
-                      </DropdownMenuTrigger>
+                      <DropdownMenuTrigger render={<Button variant="ghost" className="h-8 w-8 p-0"><MoreHorizontal className="h-4 w-4" /></Button>} />
                       <DropdownMenuContent align="end">
                         <DropdownMenuItem className="text-destructive" onClick={() => handleDelete(invoice.id)}>
                           Delete
