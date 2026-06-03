@@ -1,3 +1,23 @@
+# Serverless Stack App (WriteSaaS)
+
+## Project Details
+
+- **Intern ID**: [Insert Intern ID]
+- **Full Name**: [Insert Full Name]
+- **No. of Weeks**: [Insert No. of Weeks]
+- **Project Name**: Serverless Web Application (WriteSaaS)
+- **Project Scope**: A SaaS platform for freelance writers to manage invoices and client drafts.
+
+## Deliverables
+
+- [x] Source Code
+- [x] README File
+- [ ] Screenshots
+- [ ] Output Images
+- [ ] Documentation
+
+---
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
