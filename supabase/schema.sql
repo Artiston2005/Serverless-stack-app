@@ -74,7 +74,7 @@ create policy "Users can delete their own invoices." on invoices
   for delete using (auth.uid() = user_id);
 
 -- Function to handle new user signup
-create or function public.handle_new_user()
+create or replace function public.handle_new_user()
 returns trigger as $$
 begin
   insert into public.profiles (id, full_name, avatar_url)

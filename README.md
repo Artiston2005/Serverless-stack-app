@@ -8,6 +8,10 @@
 - **Project Name**: Serverless Web Application (WriteSaaS)
 - **Project Scope**: A SaaS platform for freelance writers to manage invoices and client drafts.
 
+## Test Credentials
+- **Email**: `demo123@writesaas.com`
+- **Password**: `password123`
+
 ## Deliverables
 
 - [x] Source Code

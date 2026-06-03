@@ -10,8 +10,8 @@ import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
 
 export default function LoginPage() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('demo123@writesaas.com');
+  const [password, setPassword] = useState('password123');
   const [loading, setLoading] = useState(false);
   const router = useRouter();
   const supabase = createClient();

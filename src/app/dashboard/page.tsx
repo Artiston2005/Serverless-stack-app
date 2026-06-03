@@ -39,7 +39,7 @@ export default async function DashboardOverview() {
             <BanknoteIcon className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">${totalUnpaid.toFixed(2)}</div>
+            <div className="text-2xl font-bold">₹{totalUnpaid.toFixed(2)}</div>
             <p className="text-xs text-muted-foreground">{unpaidInvoices.length} invoices pending</p>
           </CardContent>
         </Card>
@@ -50,7 +50,7 @@ export default async function DashboardOverview() {
             <FileText className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">${totalPaid.toFixed(2)}</div>
+            <div className="text-2xl font-bold">₹{totalPaid.toFixed(2)}</div>
             <p className="text-xs text-muted-foreground">From {paidInvoices.length} invoices</p>
           </CardContent>
         </Card>

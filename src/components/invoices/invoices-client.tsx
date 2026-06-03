@@ -70,7 +70,7 @@ export default function InvoicesClient({ invoices, projects }: { invoices: Invoi
 
   return (
     <div className="space-y-4">
-      <div className="flex justify-between items-center bg-white p-4">
+      <div className="flex justify-between items-center bg-card text-card-foreground border shadow-sm rounded-xl p-6">
         <h1 className="text-2xl font-bold">Invoices</h1>
         <Dialog open={open} onOpenChange={setOpen}>
           <DialogTrigger asChild>
@@ -93,7 +93,7 @@ export default function InvoicesClient({ invoices, projects }: { invoices: Invoi
                 </Select>
               </div>
               <div className="space-y-2">
-                <Label>Amount ($)</Label>
+                <Label>Amount (₹)</Label>
                 <Input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="0.00" />
               </div>
               <div className="space-y-2">
@@ -102,13 +102,15 @@ export default function InvoicesClient({ invoices, projects }: { invoices: Invoi
               </div>
               <div className="space-y-2">
                 <Label>Status</Label>
-                <Select value={status} onValueChange={setStatus}>
-                  <SelectTrigger><SelectValue /></SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="unpaid">Unpaid</SelectItem>
-                    <SelectItem value="paid">Paid</SelectItem>
-                  </SelectContent>
-                </Select>
+                <select 
+                  value={status} 
+                  onChange={(e) => setStatus(e.target.value)}
+                  className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                >
+                  <option value="unpaid">Unpaid</option>
+                  <option value="paid">Paid</option>
+                  <option value="overdue">Overdue</option>
+                </select>
               </div>
               <Button onClick={handleCreate} disabled={loading} className="w-full">
                 {loading ? 'Saving...' : 'Save Invoice'}
@@ -118,7 +120,7 @@ export default function InvoicesClient({ invoices, projects }: { invoices: Invoi
         </Dialog>
       </div>
 
-      <div className="border rounded-md bg-white">
+      <div className="border rounded-xl bg-card text-card-foreground shadow-sm overflow-hidden">
         <Table>
           <TableHeader>
             <TableRow>
@@ -138,7 +140,7 @@ export default function InvoicesClient({ invoices, projects }: { invoices: Invoi
               invoices.map((invoice) => (
                 <TableRow key={invoice.id}>
                   <TableCell className="font-medium">{invoice.projects?.title || 'Unknown'}</TableCell>
-                  <TableCell>${invoice.amount.toFixed(2)}</TableCell>
+                  <TableCell>₹{invoice.amount.toFixed(2)}</TableCell>
                   <TableCell className="capitalize">{invoice.status}</TableCell>
                   <TableCell>{new Date(invoice.due_date).toLocaleDateString()}</TableCell>
                   <TableCell>

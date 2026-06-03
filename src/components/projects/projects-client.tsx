@@ -54,7 +54,7 @@ export default function ProjectsClient({ projects }: { projects: Project[] }) {
 
   return (
     <div className="space-y-4">
-      <div className="flex justify-between items-center bg-white p-4">
+      <div className="flex justify-between items-center bg-card text-card-foreground border shadow-sm rounded-xl p-6">
         <h1 className="text-2xl font-bold">Projects</h1>
         <Dialog open={open} onOpenChange={setOpen}>
           <DialogTrigger asChild>
@@ -75,16 +75,15 @@ export default function ProjectsClient({ projects }: { projects: Project[] }) {
               </div>
               <div className="space-y-2">
                 <Label>Status</Label>
-                <Select value={status} onValueChange={setStatus}>
-                  <SelectTrigger>
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="pending">Pending</SelectItem>
-                    <SelectItem value="active">Active</SelectItem>
-                    <SelectItem value="completed">Completed</SelectItem>
-                  </SelectContent>
-                </Select>
+                <select 
+                  value={status} 
+                  onChange={(e) => setStatus(e.target.value)}
+                  className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                >
+                  <option value="pending">Pending</option>
+                  <option value="active">Active</option>
+                  <option value="completed">Completed</option>
+                </select>
               </div>
               <Button onClick={handleCreate} disabled={loading} className="w-full">
                 {loading ? 'Saving...' : 'Save Project'}
@@ -94,7 +93,7 @@ export default function ProjectsClient({ projects }: { projects: Project[] }) {
         </Dialog>
       </div>
 
-      <div className="border rounded-md bg-white">
+      <div className="border rounded-xl bg-card text-card-foreground shadow-sm overflow-hidden">
         <Table>
           <TableHeader>
             <TableRow>
