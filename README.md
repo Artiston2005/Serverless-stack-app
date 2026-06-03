@@ -2,9 +2,9 @@
 
 ## Project Details
 
-- **Intern ID**: [Insert Intern ID]
-- **Full Name**: [Insert Full Name]
-- **No. of Weeks**: [Insert No. of Weeks]
+- **Intern ID**: CITS1467
+- **Full Name**: Ashwin Yadav
+- **No. of Weeks**: 8 Weeks
 - **Project Name**: Serverless Web Application (WriteSaaS)
 - **Project Scope**: A SaaS platform for freelance writers to manage invoices and client drafts.
 
