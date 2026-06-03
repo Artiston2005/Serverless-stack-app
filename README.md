@@ -2,9 +2,9 @@
 
 ## Project Details
 
-- **Intern ID**: [Insert Intern ID]
-- **Full Name**: [Insert Full Name]
-- **No. of Weeks**: [Insert No. of Weeks]
+- **Intern ID**: CITS1467
+- **Full Name**: Ashwin Yadav
+- **No. of Weeks**: 8 Weeks
 - **Project Name**: Serverless Web Application (WriteSaaS)
 - **Project Scope**: A SaaS platform for freelance writers to manage invoices and client drafts.
 
@@ -12,16 +12,23 @@
 - **Email**: `demo123@writesaas.com`
 - **Password**: `password123`
 
-## Deliverables
+## Screenshots
 
-- [x] Source Code
-- [x] README File
-- [ ] Screenshots
-- [ ] Output Images
-- [ ] Documentation
+### Auth Page
+<img width="2560" height="1240" alt="Auth Page Create Next App" src="https://github.com/user-attachments/assets/58605c58-8e06-4bf8-a5cc-f1ba40893190" />
+
+### Dasboard
+<img width="2560" height="1240" alt="Dashboard Create Next App" src="https://github.com/user-attachments/assets/4596d4d3-47f0-4584-bd67-2a6eade6ddef" />
+
+### Project Section
+<img width="2560" height="1240" alt="Project Page Create Next App" src="https://github.com/user-attachments/assets/e2b61c10-21ac-467b-aea6-183c0692827c" />
+<img width="2560" height="1240" alt="New project POP UP Create Next App" src="https://github.com/user-attachments/assets/0aafcbf8-f532-4c57-b692-fe343ca86a9c" />
+
+### Invoice Section
+<img width="2560" height="1240" alt="Invoice Page Create Next App" src="https://github.com/user-attachments/assets/ac8bd5b4-aaf2-4e7a-92b0-4b7f54671835" />
+<img width="2560" height="1240" alt="New Invoice Pop Up Create Next App" src="https://github.com/user-attachments/assets/4ee90d9b-2bf8-42ba-a6e6-fa903a8935a4" />
 
 ---
-
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
